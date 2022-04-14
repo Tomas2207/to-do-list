@@ -1,6 +1,6 @@
 import build from './build-item.js';
 import { proyects } from './proyect.js';
-import editsvg from './img/edit.png';
+
 
 export default function (title, desc, date) {
   const mid = document.querySelector('.mid-content');

@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .dark-mode-btn {
@@ -52,6 +52,10 @@ h1 {
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+.title-img {
+  width: 35px;
 }
 
 .header {
@@ -89,6 +93,11 @@ h1 {
   color: white;
 }
 
+.dark-svg {
+  filter: invert(0%) sepia(0%) saturate(7471%) hue-rotate(122deg)
+    brightness(101%) contrast(109%);
+}
+
 .mid-header {
   background: var(--gradient);
 }
@@ -109,7 +118,8 @@ h1 {
   grid-auto-rows: 70px;
 }
 
-.item {
+.item,
+.item-all {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -123,8 +133,17 @@ h1 {
   position: relative;
 }
 
+.item-all img {
+  width: 40px;
+}
+
 .item-title {
   margin: 0 20px;
+}
+
+.item-all {
+  justify-content: flex-start;
+  gap: 5px;
 }
 
 .item-expand {

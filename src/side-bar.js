@@ -1,7 +1,8 @@
 import { Items } from './todo-item.js';
 import display from './display-item.js';
 import { proyects } from './proyect.js';
-import plus1 from './img/plus.png';
+import add from './img/add.svg';
+import allsvg from './img/all.svg';
 
 export default function () {
   const sidebar = document.querySelector('.side-bar');
@@ -15,7 +16,7 @@ export default function () {
 
   const proyectBtn = document.createElement('button');
   const plus = new Image();
-  plus.src = plus1;
+  plus.src = add;
   plus.classList.add('dark-mode-img');
   proyectBtn.appendChild(plus);
   proyectBtn.setAttribute('id', 'proyect-btn');
@@ -23,8 +24,13 @@ export default function () {
   sidebar.appendChild(proyectsCont);
 
   const all = document.createElement('div');
+  // const allImg = new Image();
+  // allImg.src = allsvg;
+  // allImg.classList.add('dark-svg');
+
   all.innerHTML = 'All';
-  all.classList.add('item');
+  // all.prepend(allImg);
+  all.classList.add('item-all');
   all.setAttribute('id', 'all');
   all.classList.add('side-proyect');
   sidebar.appendChild(all);

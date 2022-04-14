@@ -1,4 +1,5 @@
 import displayProyect from './display-projects.js';
+import { addProyectToStorage, resetStorage } from './localStorage.js';
 import proyect from './proyect.js';
 import { proyects } from './proyect.js';
 
@@ -46,6 +47,7 @@ export default function () {
     add.addEventListener('click', () => {
       const proy = new proyect(inputTitle.value);
       proy.addItem(proy);
+      resetStorage();
 
       console.log('this: ', proyects.indexOf(proy));
       displayProyect(proyects);

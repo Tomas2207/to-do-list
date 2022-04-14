@@ -11,7 +11,7 @@ export default function (item) {
   const mid = document.querySelector('.mid-content');
   mid.innerHTML = '';
   display(Items, 'All');
-  resetStorage(Items, 'items');
+  resetStorage();
 }
 
 const proyectRemove = function (pro) {
@@ -22,6 +22,7 @@ const proyectRemove = function (pro) {
   sideBar();
   addProyect();
   displayProjects(proyects);
+  resetStorage();
 };
 
 export { proyectRemove };
