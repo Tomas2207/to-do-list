@@ -52,10 +52,25 @@ export default function () {
     labelPrior.innerHTML = 'Priority';
     labelPrior.setAttribute('for', 'prior');
     column2.appendChild(labelPrior);
-    const inputPrior = document.createElement('input');
-    inputPrior.type = 'color';
-    inputPrior.setAttribute('id', 'prior');
+    // const inputPrior = document.createElement('input');
+    // inputPrior.type = 'color';
+    // inputPrior.setAttribute('id', 'prior');
+    // column2.appendChild(inputPrior);
+    const inputPrior = document.createElement('select');
+    inputPrior.classList.add('input-proyect');
     column2.appendChild(inputPrior);
+    const defaultPriority = document.createElement('option');
+    defaultPriority.innerHTML = '- -Select Priority- -';
+    inputPrior.appendChild(defaultPriority);
+    const greenPriority = document.createElement('option');
+    greenPriority.innerHTML = 'Green';
+    inputPrior.appendChild(greenPriority);
+    const yellowPriority = document.createElement('option');
+    yellowPriority.innerHTML = 'Yellow';
+    inputPrior.appendChild(yellowPriority);
+    const redPriority = document.createElement('option');
+    redPriority.innerHTML = 'Red';
+    inputPrior.appendChild(redPriority);
 
     const labelproyect = document.createElement('label');
     labelproyect.innerHTML = 'Proyect';

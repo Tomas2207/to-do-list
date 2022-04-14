@@ -12,7 +12,7 @@ export default function () {
     const formContainer = document.createElement('div');
     formContainer.classList.add('item');
     formContainer.classList.add('side-proyect');
-    formContainer.classList.add('form-container');
+    // formContainer.classList.add('form-container');
     formContainer.classList.add('proyect-form');
     sidebar.insertBefore(formContainer, sidebar.children[1]);
 
@@ -26,15 +26,18 @@ export default function () {
     inputTitle.setAttribute('id', 'title');
     formContainer.appendChild(inputTitle);
 
+    const buttonCont = document.createElement('div');
+    formContainer.appendChild(buttonCont);
+
     const add = document.createElement('button');
     add.innerHTML = '+';
     add.classList.add('proyect-btn');
-    formContainer.appendChild(add);
+    buttonCont.appendChild(add);
 
     const cancel = document.createElement('button');
     cancel.innerHTML = 'x';
     cancel.classList.add('proyect-btn');
-    formContainer.appendChild(cancel);
+    buttonCont.appendChild(cancel);
 
     cancel.addEventListener('click', () => {
       sidebar.removeChild(formContainer);
@@ -43,6 +46,7 @@ export default function () {
     add.addEventListener('click', () => {
       const proy = new proyect(inputTitle.value);
       proy.addItem(proy);
+
       console.log('this: ', proyects.indexOf(proy));
       displayProyect(proyects);
       sidebar.removeChild(formContainer);

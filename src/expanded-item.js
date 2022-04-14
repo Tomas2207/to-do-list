@@ -1,5 +1,9 @@
+import buildItem from './build-item';
 import displayItem from './display-item';
 import Item, { Items } from './todo-item';
+import edit1 from './edit.js';
+import removes from './remove.js';
+import editsvg from './img/edit.svg';
 
 export default function (div, obj, t) {
   div.innerHTML = '';
@@ -12,8 +16,9 @@ export default function (div, obj, t) {
   column2.classList.add('column');
 
   const title = document.createElement('div');
+  title.classList.add('expand-title');
   title.innerHTML = obj.title;
-  column1.appendChild(title);
+  div.appendChild(title);
 
   const Description = document.createElement('div');
   Description.classList.add('note');
@@ -32,6 +37,19 @@ export default function (div, obj, t) {
   expand.classList.add('expandBtn');
   expand.innerHTML = '∨';
   div.prepend(expand);
+
+  const edit = document.createElement('button');
+  edit.classList.add('edit-button');
+  div.appendChild(edit);
+  const editimg = new Image(22);
+  editimg.src = editsvg;
+  edit.classList.add('edit-button');
+  edit.appendChild(editimg);
+
+  edit.addEventListener('click', () => {
+    removes(obj);
+    edit1(obj.title, obj.description, obj.dueDate);
+  });
 
   expand.addEventListener('click', () => {
     div.classList.remove('item-expand');

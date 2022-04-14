@@ -4,12 +4,14 @@ import { proyects } from './proyect.js';
 import sideBar from './side-bar.js';
 import addProyect from './add-proyect.js';
 import displayProjects from './display-projects.js';
+import { resetStorage } from './localStorage.js';
 
 export default function (item) {
   Items.splice(Items.indexOf(item), 1);
   const mid = document.querySelector('.mid-content');
   mid.innerHTML = '';
   display(Items, 'All');
+  resetStorage(Items, 'items');
 }
 
 const proyectRemove = function (pro) {

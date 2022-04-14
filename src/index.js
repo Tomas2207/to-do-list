@@ -5,10 +5,21 @@ import display from './display-item.js';
 import form from './form.js';
 import sideBar from './side-bar.js';
 import addProyect from './add-proyect.js';
+import sort from './sort.js';
+import darkMode from './dark-mode.js';
 
-const shit = new Item('Welcome!', '', '', 'e');
+const welcome = new Item('Welcome!', '', '', 'e');
 
-shit.addItem(shit);
+welcome.addItem(welcome);
+
+darkMode();
+
+const sortSelect = document.querySelector('#sort');
+sortSelect.addEventListener('click', () => {
+  sort(Items);
+  display(Items, 'All');
+});
+
 display(Items, 'All');
 form();
 sideBar();

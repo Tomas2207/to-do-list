@@ -1,6 +1,7 @@
 import { Items } from './todo-item.js';
 import display from './display-item.js';
 import { proyects } from './proyect.js';
+import plus1 from './img/plus.png';
 
 export default function () {
   const sidebar = document.querySelector('.side-bar');
@@ -13,7 +14,10 @@ export default function () {
   proyectsCont.appendChild(proyects);
 
   const proyectBtn = document.createElement('button');
-  proyectBtn.innerHTML = '+Add Proyect';
+  const plus = new Image();
+  plus.src = plus1;
+  plus.classList.add('dark-mode-img');
+  proyectBtn.appendChild(plus);
   proyectBtn.setAttribute('id', 'proyect-btn');
   proyectsCont.appendChild(proyectBtn);
   sidebar.appendChild(proyectsCont);

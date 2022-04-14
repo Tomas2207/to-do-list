@@ -1,11 +1,12 @@
 import removes from './remove.js';
 import expandedItem from './expanded-item.js';
+import sort from './sort.js';
 
 export default function (list, title) {
+  sort(list);
   if (title === 'All') {
     list.forEach((i) => {
       const mid = document.querySelector('.mid-content');
-
       const item = document.createElement('div');
       item.classList.add('item');
       mid.appendChild(item);

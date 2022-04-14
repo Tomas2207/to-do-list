@@ -12,10 +12,21 @@
         <div class="title">
           <img src="/src/img/icons8-to-do-50.png" alt="" />
           <h1>To Do List</h1>
+          <button class="dark-mode-btn"><img src="/src/img/moon.png" alt="" class="dark-mode-img"></button>
         </div>
       </div>
       <div class="middle">
         <div class="mid-header">
+          <label for="sort" id="sort-label">Sort by</label>
+          <select name="sort" id="sort" class="sort-select">
+            <option value="Red" ">
+              Priority( ^ )
+            </option>
+            <option value="Green" ">
+              Priority( v )
+            </option>
+          </select>
+
           <button class="add-item">+Add item</button>
         </div>
         <div class="side-bar">
